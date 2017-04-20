@@ -7,66 +7,77 @@ import ar.edu.unlam.pb2.tp1Disco.Disco;
 
 public class TestDisco {
 	@Test
-	public void queSeCreeUnDisco(){
-		//Diametro de 8
-		Disco miDisco = new Disco(0.00);
-		//Ingresar Diametro
-		miDisco.setDiametro(8.00);
+	public void conocerRadiosInteriorYExterior(){
+		//DMayor Dmenor
+		Disco miDisco = new Disco(0.00, 0.00);
+		//Reciben Diámetros may y men
+		miDisco.setRadioExterno(12.00, 1.50);
+		miDisco.setRadioInterno(12.00, 1.50);
 		
-		Double valorEsperado=8.00;
-		Double valorObtenido=miDisco.getDiametro();
+		Double valorEsperado1 = 6.00;
+		Double valorObtenido1 = miDisco.getRadioExterno();
 		
-		Assert.assertEquals(valorEsperado, valorObtenido);
+		Double valorEsperado2 = 0.75;
+		Double valorObtenido2 = miDisco.getRadioInterno();
 		
-		System.out.println("Se creó un disco de diametro: ");
-		System.out.println(miDisco.getDiametro());
+		Assert.assertEquals(valorEsperado1, valorObtenido1);
+		Assert.assertEquals(valorEsperado2, valorObtenido2);
+		
+		System.out.println("El radio interior es : ");
+		System.out.println(miDisco.getRadioInterno());
+		
+		System.out.println("El radio exterior es : ");
+		System.out.println(miDisco.getRadioExterno());
+		
+		
 	}
 
 	@Test
-	public void testConocerRadioInteriorDeDiscoSegunDiametro(){
-		//Diametro de 8
-		Disco miDisco = new Disco(8.00);
-		//Ingresar Diametro
-		miDisco.setRadio(8.00);
+	public void conocerPerimetrosInteriorYExterior(){
+		//DMayor Dmenor
+				Disco miDisco = new Disco(12.00, 1.50);
+				//Reciben Diámetros may y men
+				
+				miDisco.setRadioExterno(12.00, 1.50);
+				miDisco.setRadioInterno(12.00, 1.50);
+				
+				miDisco.setPerimetroExterno(miDisco.getRadioExterno());
+				miDisco.setPerimetroInterno(miDisco.getRadioInterno());
+				
+				Double valorEsperado1=6.00;
+				Double valorObtenido1=miDisco.getRadioExterno();
+				Double valorEsperado2=0.75;
+				Double valorObtenido2=miDisco.getRadioInterno();
+				
+				Assert.assertEquals(valorEsperado1, valorObtenido1);
+				Assert.assertEquals(valorEsperado2, valorObtenido2);
+				
+				System.out.println("El perímetro exterior es : ");
+				System.out.println((miDisco.getPerimetroExterno()));
+				System.out.println("El perímetro interior es : ");
+				System.out.println((miDisco.getPerimetroInterno()));
+				
 		
-		Double valorEsperado=4.00;
-		Double valorObtenido=miDisco.getRadio();
-		
-		Assert.assertEquals(valorEsperado, valorObtenido);
-		
-		System.out.println("Se creó un disco de radio Interior: ");
-		System.out.println(miDisco.getRadio());
 	}
 	
 	@Test
-	public void testConocerSuperficieDeDiscoSegunDiametro(){
-		//Diametro de 8
-		Disco miDisco = new Disco(0.00);
-		//Ingresar Diametro!
-		miDisco.setSuperficie(8.00);
+	public void testConocerSuperficieDeDisco(){
 		
-		Double valorEsperado=50.24;
+		Disco miDisco = new Disco(12.00, 1.50);
+		//Reciben Diámetros may y men
+		miDisco.setSuperficie(12.00, 1.50);
+		Double valorEsperado=33.04;
 		Double valorObtenido=miDisco.getSuperficie();
 		
 		Assert.assertEquals(valorEsperado, valorObtenido);
+		System.out.println("La superficie total es : ");
+		System.out.println((miDisco.getSuperficie()));
 		
-		System.out.println("Se creó un disco con superficie de: ");
-		System.out.println(miDisco.getSuperficie());
+		
+		
+		
+		
 	}
 
-	@Test
-	public void testConocerPerimetroDeDiscoSegunDiametro(){
-		//Diametro de 8
-		Disco miDisco = new Disco(0.00);
-		//Ingresar Diametro!
-		miDisco.setPerimetro(8.00);
-		
-		Double valorEsperado=25.12;
-		Double valorObtenido=miDisco.getPerimetro();
-		
-		Assert.assertEquals(valorEsperado, valorObtenido);
-		
-		System.out.println("Se creó un disco con perímetro de: ");
-		System.out.println(miDisco.getPerimetro());
-	}
+	
 }
