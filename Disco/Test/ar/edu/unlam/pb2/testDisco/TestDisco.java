@@ -14,14 +14,14 @@ public class TestDisco {
 		miDisco.setRadioExterno(12.00, 1.50);
 		miDisco.setRadioInterno(12.00, 1.50);
 		
-		Double valorEsperado1 = 6.00;
-		Double valorObtenido1 = miDisco.getRadioExterno();
+		Double radioExternoEsperado = 6.00;
+		Double radioExternoObtenido = miDisco.getRadioExterno();
 		
-		Double valorEsperado2 = 0.75;
-		Double valorObtenido2 = miDisco.getRadioInterno();
+		Double radioInternoEsperado = 0.75;
+		Double radioInternoObtenido = miDisco.getRadioInterno();
 		
-		Assert.assertEquals(valorEsperado1, valorObtenido1);
-		Assert.assertEquals(valorEsperado2, valorObtenido2);
+		Assert.assertEquals(radioExternoEsperado, radioExternoObtenido);
+		Assert.assertEquals(radioInternoEsperado, radioInternoObtenido);
 		
 		System.out.println("El radio interior es : ");
 		System.out.println(miDisco.getRadioInterno());
@@ -44,13 +44,13 @@ public class TestDisco {
 				miDisco.setPerimetroExterno(miDisco.getRadioExterno());
 				miDisco.setPerimetroInterno(miDisco.getRadioInterno());
 				
-				Double valorEsperado1=6.00;
-				Double valorObtenido1=miDisco.getRadioExterno();
-				Double valorEsperado2=0.75;
-				Double valorObtenido2=miDisco.getRadioInterno();
+				Double radioExternoEsperado=6.00;
+				Double radioExternoObtenido=miDisco.getRadioExterno();
+				Double radioInternoEsperado=0.75;
+				Double radioInternoObtenido=miDisco.getRadioInterno();
 				
-				Assert.assertEquals(valorEsperado1, valorObtenido1);
-				Assert.assertEquals(valorEsperado2, valorObtenido2);
+				Assert.assertEquals(radioExternoEsperado, radioExternoObtenido);
+				Assert.assertEquals(radioInternoEsperado, radioInternoObtenido);
 				
 				System.out.println("El perímetro exterior es : ");
 				System.out.println((miDisco.getPerimetroExterno()));
@@ -63,12 +63,12 @@ public class TestDisco {
 	public void testConocerSuperficieDeDisco(){
 		
 		Disco miDisco = new Disco(12.00, 1.50);
-		//Reciben Diámetros may y men
+		//Recibe Diámetros may y men
 		miDisco.setSuperficie(12.00, 1.50);
-		Double valorEsperado=33.04;
-		Double valorObtenido=miDisco.getSuperficie();
+		Double perimetroEsperado=32.97;
+		Double perimetroObtenido=miDisco.getSuperficie();
 		
-		Assert.assertEquals(valorEsperado, valorObtenido);
+		Assert.assertEquals(perimetroEsperado, perimetroObtenido);
 		System.out.println("La superficie total es : ");
 		System.out.println((miDisco.getSuperficie()));		
 		
@@ -76,3 +76,4 @@ public class TestDisco {
 
 	
 }
+
