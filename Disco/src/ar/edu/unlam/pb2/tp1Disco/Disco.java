@@ -39,7 +39,7 @@ public class Disco {
 	}
 
 	public void setRadioExterno(Double diametroMayor, Double diametroMenor) {
-		//this.radioExterno = diametroMayor/2;  ESTO DA SIN USAR LOS DOS PARAMETROS
+		
 		this.radioExterno = ((diametroMayor - diametroMenor)+(diametroMayor+diametroMenor))/4;
 	}
 
@@ -48,7 +48,7 @@ public class Disco {
 	}
 
 	public void setRadioInterno(Double diametroMayor, Double diametroMenor) {
-		//this.radioInterno = diametroMenor/2; ESTO DA SIN USAR LOS DOS PARAMETROS
+		
 		this.radioInterno = ((diametroMayor+diametroMenor)-(diametroMayor-diametroMenor))/4;
 		
 	}
@@ -58,7 +58,7 @@ public class Disco {
 	}
 
 	public void setSuperficie(Double diametroMayor, Double diametroMenor) {
-		this.superficie = (3.14 *diametroMayor)-(3.14 + diametroMenor);
+		this.superficie = (3.14 *diametroMayor)-(3.14*diametroMenor);
 	}
 	
 	
